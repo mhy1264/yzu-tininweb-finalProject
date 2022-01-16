@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+  </head>
+  <body>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <div class="form__group">
+      <input type="text" class="form__input" id="name" placeholder="Stock Code" pattern="[0-9]{4,5}"/>
+      <input type="button" id="getStock" hidden onclick="showBasicInformation()">
+    </div>
+    <div>
+      <div id="BasicInormation"></div><!--done-->
+      <div id="releativeStock"></div><!--done-->
+      <div id="currentStatus"></div><!-- json problems -->
+      <div id="anaiyze"></div><!--not start-->
+      <div id="placeOrderArea"></div><!--not start-->
+    </div>
+  </head>
+  <script src="index.js"></script>
+  </body>
+</html>
