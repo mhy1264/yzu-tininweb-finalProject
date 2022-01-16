@@ -6,6 +6,42 @@ input.addEventListener("keyup", function(event) {
   }
 });
 
+function showVote()
+{
+	$.ajax({
+		url: "php/showVote.php",
+		data: {
+		},
+		type: "POST",
+		datatype: "html",
+		success: function( out ) {
+			document.getElementById("vote").innerHTML=out;
+		},
+		error : function(){
+			alert( "Request failed." );
+		}
+	});
+
+}
+
+
+function doVote()
+{
+	$.ajax({
+		url: "php/doVote.php",
+		data: {
+		},
+		type: "POST",
+		datatype: "html",
+		success: function( out ) {
+        	document.getElementById("showVoltResult").innerHTML=out;
+		},
+		error : function(){
+			alert( "Request failed." );
+		}
+	});
+}
+
 
 function showRelativeStock(name)
 {
@@ -38,8 +74,7 @@ var name = $("#name").val();
 		success: function( output ) {
 			document.getElementById( "BasicInormation" ).innerHTML = output;
 			// showRelativeStock(name);
-			showCurrentStatus(name);
-			// showanalyze(name);
+			showVote(name);
 			// showPlaceOrderArea(name);
 		},
 		error : function(){
@@ -48,21 +83,21 @@ var name = $("#name").val();
 	});
 }
 
-function showCurrentStatus(name)
-{
-	$.ajax({
-	url: "currentStatus.php",
-	data: {
-		name:name
-	},
-	type: "POST",
-	datatype: "json",
-		success: function( output ) {
-	   $( "#currentStatus" ).html(output);
-		},
-	error : function(){
-		alert( "Request failed." );
-	}
-	});
+// function showCurrentStatus(name)
+// {
+// 	$.ajax({
+// 	url: "currentStatus.php",
+// 	data: {
+// 		name:name
+// 	},
+// 	type: "POST",
+// 	datatype: "json",
+// 		success: function( output ) {
+// 	   $( "#currentStatus" ).html(output);
+// 		},
+// 	error : function(){
+// 		alert( "Request failed." );
+// 	}
+// 	});
 
-}
+// }
