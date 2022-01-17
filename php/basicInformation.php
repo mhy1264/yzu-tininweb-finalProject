@@ -20,14 +20,28 @@
         print( "<p>Could not execute query!</p>" );
         die( mysqli_error() . "</body></html>" );
     }
-    mysqli_close( $database );
-    print ('<table id="stockInfo"');
+
+    $count=0;
     while ( $row = mysqli_fetch_row( $result ) )
     {
-        print( "<tr>" );
-        foreach ( $row as $value )
-        print( "<td>$value</td>" );
-        print( "</tr>" );
+        $count++;
     }
-    print ("</table>");
+
+    mysqli_close( $database );
+    if($count>1)
+    {
+        print ('<table id="stockInfo"');
+        while ( $row = mysqli_fetch_row( $result ) )
+        {
+            print( "<tr>" );
+            foreach ( $row as $value )
+            print( "<td>$value</td>" );
+            print( "</tr>" );
+        }
+        print ("</table>");        
+    }
+    else{
+        print("0");
+    }
+
 ?>
