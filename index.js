@@ -85,6 +85,31 @@ function calculate()
 	});
 }
 
+function doCal()
+{
+	var buyPrice=$("#inPrice").val();
+	var sellPrice=$("#outPrice").val();
+	var unit=$("#thing").val();
+	var num=$("#num").val();
+	console.log(unit);
+	$.ajax({
+		url: "php/doCalculate.php",
+		data: {
+			buyPrice:buyPrice,
+			sellPrice:sellPrice,
+			unit:unit,
+			num:num
+		},
+		type: "POST",
+		datatype: "html",
+		success: function( output ) {
+			
+		},
+		error : function(){
+			alert( "Request failed." );
+		}
+	});
+}
 
 function showBasicInformation()
 {
@@ -97,10 +122,18 @@ function showBasicInformation()
 		type: "POST",
 		datatype: "html",
 		success: function( output ) {
-			document.getElementById( "BasicInormation" ).innerHTML = output;
-			showRelativeStock(stockCode);
-			showVote(stockCode);
-			calculate(name);
+			if(output==0)
+			{
+				print("查無股票 或 此股票為ETF");
+				$("#summation").remove();
+			}			
+			else{
+				document.getElementById( "BasicInormation" ).innerHTML = output;
+				showRelativeStock(stockCode);
+				showVote(stockCode);
+				calculate();
+			}
+
 		},
 		error : function(){
 			alert( "Request failed." );
