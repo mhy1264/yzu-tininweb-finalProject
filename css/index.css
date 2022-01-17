@@ -34,16 +34,6 @@ body
 	-webkit-transform: translateY(-4rem);
 	transform: translateY(-4rem);
   }
-  
-/* div#BasicInormation*/
-div#BasicInormation{
-
-}
-/* stockInfo css here*/
-#stockInfo{
-	
-
-}
 
 .g-container {
 	width: 240px;
@@ -66,3 +56,26 @@ initial-value: 0%;
 	border: 1px solid #eee;
 	transition: .3s --progress;
 }
+/* your code start here */
+
+
+div#BasicInformation{
+
+
+
+}
+
+div#summation{
+
+
+
+}
+
+table{
+
+	
+}
+
+
+
+/* your code finish here */
