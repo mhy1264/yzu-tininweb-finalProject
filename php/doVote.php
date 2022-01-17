@@ -56,11 +56,11 @@ while($row = mysqli_fetch_assoc($result))
 $total=$up+$down;
 $up=$up/$total;
 $down=$down/$total;
-
+$up*=100;
+$down*=100;
 //Step 4.輸出 
-print('<div class="g-container"><div class="g-progress" style="--progress: '.$up.' ">'.$up.'% </div></div>');
-print('<div class="g-container"><div class="g-progress" style="--progress: '.$down.' ">'.$down.'% </div></div>');
-
+print('<div class="g-container"><div class="g-progress" style="--progress: '.$up.'% ">'.$up.'% </div></div>');
+print('<div class="g-container"><div class="g-progress" style="--progress: '.$down.'% ">'.$down.'% </div></div>');
 
 mysqli_close( $database );
 ?>

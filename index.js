@@ -30,7 +30,7 @@ function doVote()
 {
 	console.log("in doVolt");
 	console.log(stockCode);
-	var option=$('input:radio[name="V"]:checked').val();
+	var option=$('input:radio[name=V]:checked').val();
 	console.log(option);
 	$.ajax({
 		url: "php/doVote.php",
@@ -68,6 +68,24 @@ function showRelativeStock(stockCode)
 	});
 }
 
+function calculate()
+{
+	$.ajax({
+		url: "php/showCalculate.php",
+		data: {
+		},
+		type: "POST",
+		datatype: "html",
+		success: function( output ) {
+			document.getElementById( "calculate" ).innerHTML = output;
+		},
+		error : function(){
+			alert( "Request failed." );
+		}
+	});
+}
+
+
 function showBasicInformation()
 {
 	stockCode = $("#name").val();
@@ -79,32 +97,13 @@ function showBasicInformation()
 		type: "POST",
 		datatype: "html",
 		success: function( output ) {
-			//document.getElementById( "BasicInormation" ).innerHTML = output;
-			// showRelativeStock(name);
+			document.getElementById( "BasicInormation" ).innerHTML = output;
+			showRelativeStock(stockCode);
 			showVote(stockCode);
-			// showPlaceOrderArea(name);
+			calculate(name);
 		},
 		error : function(){
 			alert( "Request failed." );
 		}
 	});
 }
-
-// function showCurrentStatus(name)
-// {
-// 	$.ajax({
-// 	url: "currentStatus.php",
-// 	data: {
-// 		name:name
-// 	},
-// 	type: "POST",
-// 	datatype: "json",
-// 		success: function( output ) {
-// 	   $( "#currentStatus" ).html(output);
-// 		},
-// 	error : function(){
-// 		alert( "Request failed." );
-// 	}
-// 	});
-
-// }

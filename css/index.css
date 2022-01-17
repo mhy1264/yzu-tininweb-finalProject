@@ -62,7 +62,7 @@ initial-value: 0%;
 	width: 240px;
 	height: 25px;
 	border-radius: 25px;
-	background: linear-gradient(90deg, #0f0, #0ff var(--progress), transparent 0);
+	background: linear-gradient(90deg,#0ff , #0f0 var(--progress), transparent 0);
 	border: 1px solid #eee;
 	transition: .3s --progress;
 }

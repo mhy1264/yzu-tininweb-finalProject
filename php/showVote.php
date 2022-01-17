@@ -1,7 +1,4 @@
 <?php
-
-
-
 print("<form>");
 print('<p>預測下一個交易日會漲還是跌</p>');
 print('<label><input type="radio" name="V" value="U">會漲');
