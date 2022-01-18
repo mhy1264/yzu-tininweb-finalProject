@@ -27,9 +27,9 @@
 
 
 
-    print ('<table id="stockInfo">');
-    print("<tr><td colspan='2'>猜你喜歡</td>");
-    print("<tr><td>股票代碼</td><td>公司全名</td></tr>");
+    print("<h2>猜你喜歡</h2>");
+    print ('<table id="stockInfo" class="styled-table">');
+    print("<thead><tr><th>股票代碼</th><th>公司全名</th></tr></thead><tbody>");
     while ( $row = mysqli_fetch_row( $result ) )
     {
         $displayNumber=rand(0,10000000)%8;
@@ -41,7 +41,7 @@
         }
 
     }
-    print ("</table>");
+    print ("</tbody></table>");
  // this is comment 50
     mysqli_close( $database );
 ?>
