@@ -59,16 +59,24 @@ initial-value: 0%;
 /* your code start here */
 
 
-div#BasicInformation{
 
-
-
+/*div#summation{
+	margin:0px auto;
+}*/
+.left {
+	width:400px;
+	line-height:50px;
+	padding:20px;
+	
+	margin-right:10px;
+	float:left;
 }
-
-div#summation{
-
-
-
+.right {
+	width:600px;
+	line-height:40px;
+	padding:20px;
+	
+	float:left;
 }
 
 .styled-table {
