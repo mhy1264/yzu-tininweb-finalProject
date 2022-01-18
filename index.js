@@ -131,7 +131,7 @@ function showBasicInformation()
 				calculate(stockCode);
 			}
 			else{
-				document.getElementById( "BasicInormation" ).innerHTML = "Not Found";
+				document.getElementById( "BasicInormation" ).innerHTML = "<table><thead><tr><th>Not found</th></tr></thead><table>";
 				$("#summation").hide();
 			}
 
