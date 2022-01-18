@@ -42,6 +42,6 @@
 
     }
     print ("</table>");
-
+ // this is comment 50
     mysqli_close( $database );
 ?>
