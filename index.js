@@ -103,7 +103,7 @@ function doCal()
 		type: "POST",
 		datatype: "html",
 		success: function( output ) {
-			
+			document.getElementById( "showCalResult" ).innerHTML = output;
 		},
 		error : function(){
 			alert( "Request failed." );
