@@ -73,10 +73,14 @@ initial-value: 0%;
 }
 .right {
 	width:600px;
-	line-height:40px;
+	line-height:50px;
 	padding:20px;
 	
 	float:left;
+}
+
+.button {
+	border-radius: 10px;
 }
 
 .styled-table {
