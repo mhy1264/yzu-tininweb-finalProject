@@ -111,6 +111,42 @@ function doCal()
 	});
 }
 
+function doRank(stock)
+{
+	$.ajax({
+		url: "php/doRank.php",
+		data: {
+			stock:stock
+		},
+		type: "POST",
+		datatype: "html",
+		success: function( output ) {
+			console.log("do rank");
+		},
+		error : function(){
+			alert( "Request failed." );
+		}
+	});
+
+}
+
+function showRank()
+{
+	$.ajax({
+		url: "php/showRank.php",
+		data: {
+		},
+		type: "POST",
+		datatype: "html",
+		success: function( output ) {
+			document.getElementById("rank").innerHTML=output;
+		},
+		error : function(){
+			alert( "Request failed." );
+		}
+	});
+}
+
 function showBasicInformation()
 {
 	stockCode = $("#name").val();
@@ -129,6 +165,8 @@ function showBasicInformation()
 				showRelativeStock(stockCode);
 				showVote(stockCode);
 				calculate(stockCode);
+				doRank(stockCode);
+				showRank();
 			}
 			else{
 				document.getElementById( "BasicInormation" ).innerHTML = "<table><thead><tr><th>Not found</th></tr></thead><table>";
