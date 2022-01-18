@@ -131,7 +131,7 @@ function showBasicInformation()
 				calculate(stockCode);
 			}
 			else{
-				document.getElementById( "BasicInormation" ).innerHTML = "查不到此股票";
+				document.getElementById( "BasicInormation" ).innerHTML = "Not Found";
 				$("#summation").hide();
 			}
 

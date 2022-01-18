@@ -4,7 +4,7 @@
     $sellPrince=$_POST['sellPrice'];
     $unit=$_POST['unit'];
     $num=$_POST['num'];
-    $diff=($sellPrince-$buyPrice)*1000*num;
+    $diff=($sellPrince-$buyPrice)*1000*$num;
     if($diff>=0)
     {
         print("<p>你總共賺的錢是".$diff."元</p>");
