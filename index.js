@@ -122,16 +122,17 @@ function showBasicInformation()
 		type: "POST",
 		datatype: "html",
 		success: function( output ) {
-			if(output==0)
+			if(output!="0")
 			{
-				print("查無股票 或 此股票為ETF");
-				$("#summation").remove();
-			}			
-			else{
+				$("#summation").show();
 				document.getElementById( "BasicInormation" ).innerHTML = output;
 				showRelativeStock(stockCode);
 				showVote(stockCode);
-				calculate();
+				calculate(stockCode);
+			}
+			else{
+				document.getElementById( "BasicInormation" ).innerHTML = "查不到此股票";
+				$("#summation").hide();
 			}
 
 		},
