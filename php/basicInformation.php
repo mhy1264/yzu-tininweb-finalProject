@@ -30,7 +30,7 @@
     mysqli_close( $database );
     if($count>1)
     {
-        print ('<table id="stockInfo"');
+        print ('<table id="stockInfo" class="styled-table">');
         while ( $row = mysqli_fetch_row( $result ) )
         {
             print( "<tr>" );
