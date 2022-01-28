@@ -1,4 +1,5 @@
 var stockCode;
+//ref :https://cynthiafan1230.pixnet.net/blog/post/179563965-170828-%3A%3A-javascript-%3A%3A-%E5%9C%A8input-text-%E6%8C%89%E4%B8%8B-enter-%E5%8D%B3%E5%8F%AF%E9%80%818
 var input = document.getElementById("name");
 input.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
